@@ -34,8 +34,32 @@ let findstatuslength = function () {
 };
 
 findstatuslength();
+let unmarkItem = function (p, index) {
+  p.style.textDecoration = "none";
+  p.style.backgroundColor = "#666";
+  complete -= 1;
+  incomplete += 1;
+  incompleted.textContent = incomplete;
+  completed.textContent = complete;
+  p.dataset.complete = false;
+  students[index].CompleteStatus = false;
+};
 
-let choice;
+let ShowOverRideModel = function (p, index) {
+  modeloverlay.classList.add("displaymodel");
+  document.querySelector(".model-container h1 span").textContent =
+    p.textContent;
+  const modalYesButton = document.querySelector(".option-yes");
+  modalYesButton.addEventListener("click", () => {
+    modeloverlay.classList.remove("displaymodel");
+    unmarkItem(p, index);
+  });
+  const modalNoButton = document.querySelector(".option-no");
+  modalNoButton.addEventListener("click", () => {
+    modeloverlay.classList.remove("displaymodel");
+  });
+};
+
 let strick = function (p, index) {
   if (p.style.textDecoration != "line-through") {
     p.style.textDecoration = "line-through";
@@ -47,17 +71,7 @@ let strick = function (p, index) {
     p.dataset.complete = true;
     students[index].CompleteStatus = true;
   } else if (p.style.textDecoration == "line-through") {
-    modeloverlay.classList.add("displaymodel");
-    if (choice == "yes") {
-      p.style.textDecoration = "none";
-      p.style.backgroundColor = "#666";
-      complete -= 1;
-      incomplete += 1;
-      incompleted.textContent = incomplete;
-      completed.textContent = complete;
-      p.dataset.complete = false;
-      students[index].CompleteStatus = false;
-    }
+    ShowOverRideModel(p, index);
   }
   localStorage.setItem("studentslist", JSON.stringify(students));
 };
@@ -128,6 +142,7 @@ let markstudent = function () {
     else rno = "73152113" + val;
     findstudent(rno);
     input.value = "";
+    input.focus();
   } else alert("Empty Field");
 };
 
