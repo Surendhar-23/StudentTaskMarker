@@ -1,0 +1,232 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- color
+Primary: #12b886   -Tints: #63e6be #099268
+Gray:#343a40
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  color: #343a40;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: #dddddddd;
+}
+section {
+  height: 100vh;
+  background: linear-gradient(to right, #12b886, #63e6be);
+  /* background: linear-gradient(t); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.title button {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background-color: #f03e3e;
+  cursor: pointer;
+  color: #fff;
+}
+.title button:hover {
+  background-color: #ff6b6b;
+}
+
+.container {
+  /* margin: 10rem auto; */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #0000009e;
+  background-color: #ffffffcc;
+  padding: 2rem;
+  margin: 0 1.5rem;
+}
+/* nav */
+.container-nav {
+  width: 100%;
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #63e6be;
+}
+.inputnav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.inputbox {
+  /* background-color: blue; */
+  display: block;
+  /* margin-right: 2rem; */
+  /* grid-column: 1/2; */
+}
+.inputbox input {
+  width: 65%;
+  padding: 2rem 1rem;
+  font-size: 1.6rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.markbtn {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-left: 1.5rem;
+  padding: 8px 16px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.markbtn:hover {
+  background-color: #dddddd;
+}
+.statusbox {
+  /* grid-column: 2/3; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0px auto; */
+  gap: 10px;
+}
+.statusbox p {
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.statusbox p span {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.listcontrol {
+  justify-self: center;
+}
+
+.listcontrol button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+  font-size: 1.6rem;
+}
+/* content */
+.content {
+  /* background-color: yellow; */
+  padding: 1.6rem;
+  box-shadow: 0px 0px 10px #bbbbbb68;
+}
+
+.contenteach {
+  font-size: 1.6rem;
+  /* padding: 20px; */
+  line-height: 1;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.contenteach p {
+  /* text-decoration: line-through; */
+  cursor: pointer;
+  text-decoration: none;
+  /* background-color: #ccc; */
+  background-color: #666;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+}
+
+/* ModelWindows */
+.displaymodel {
+  display: block !important;
+}
+.modeloverlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#777777a1, #bbbbbb93);
+  z-index: 1;
+}
+
+.overridemodel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #63e6be;
+  padding: 4rem 2rem;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.model-container {
+  width: 300px;
+  /* background-color: rebeccapurple; */
+}
+
+.model-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.model-container .option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.option button {
+  width: 8rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}

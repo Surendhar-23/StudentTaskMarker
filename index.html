@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudentTaskMarker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div>
+        <h1 class="title">
+          Student Task Marker <button class="makenew">Make New</button>
+        </h1>
+
+        <div class="container">
+          <nav class="container-nav">
+            <div class="inputnav">
+              <div class="inputbox">
+                <input type="text" placeholder="Enter Regno:" />
+                <button class="markbtn">Mark</button>
+              </div>
+              <div class="statusbox">
+                <p>Completed : <span class="completed">-</span></p>
+                <p>InCompleted : <span class="incompleted">-</span></p>
+              </div>
+            </div>
+
+            <div class="listcontrol">
+              <button class="incompletelist">Incomplete</button>
+              <button class="completelist">complete</button>
+              <button class="bothlist">Both</button>
+            </div>
+          </nav>
+          <article class="content">
+            <div class="contenteach"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <div class="modeloverlay">
+      <div class="overridemodel">
+        <div class="model-container">
+          <h1>Do you want to Unmark : <span> </span></h1>
+          <div class="option">
+            <button class="btn option-no">No</button>
+            <button class="btn option-yes">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="Studentinfo.js"></script>
+  </body>
+</html>
