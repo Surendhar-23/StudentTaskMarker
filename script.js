@@ -45,19 +45,33 @@ let unmarkItem = function (p, index) {
   students[index].CompleteStatus = false;
 };
 
+// Model Yes or NO Control
+let modalYesButton = document.querySelector(".option-yes");
+let modalNoButton = document.querySelector(".option-no");
+
+let yesopertion = function (p, index) {
+  modeloverlay.classList.remove("displaymodel");
+  unmarkItem(p, index);
+  console.log("hello yes");
+  modalYesButton.removeEventListener("click", myListener);
+  modalNoButton.removeEventListener("click", noopertion);
+};
+let noopertion = function () {
+  modeloverlay.classList.remove("displaymodel");
+  console.log("hello no");
+  modalYesButton.removeEventListener("click", myListener);
+  modalNoButton.removeEventListener("click", noopertion);
+};
+let myListener;
 let ShowOverRideModel = function (p, index) {
   modeloverlay.classList.add("displaymodel");
   document.querySelector(".model-container h1 span").textContent =
     p.textContent;
-  const modalYesButton = document.querySelector(".option-yes");
-  modalYesButton.addEventListener("click", () => {
-    modeloverlay.classList.remove("displaymodel");
-    unmarkItem(p, index);
-  });
-  const modalNoButton = document.querySelector(".option-no");
-  modalNoButton.addEventListener("click", () => {
-    modeloverlay.classList.remove("displaymodel");
-  });
+  myListener = function (event) {
+    yesopertion(p, index);
+  };
+  modalYesButton.addEventListener("click", myListener);
+  modalNoButton.addEventListener("click", noopertion);
 };
 
 let strick = function (p, index) {
